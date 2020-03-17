@@ -1,0 +1,26 @@
+server:
+  port: 8020
+#  port: ${CUSTOMER.SERVICE.PORT}
+spring:
+  application:
+    name: microservice-provider-customer
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+      format_sql: true
+  datasource:
+#    url: jdbc:mysql://172.16.26.213:33306/minibank
+#    url: jdbc:mysql://${MYSQL.SERVER.IP}:${MYSQL.SERVER.PORT}/minibank
+    url: jdbc:mysql://${MYSQL.SERVER}:${MYSQL.PORT}/minibank
+    username: root
+    password: 123456
+#eureka:
+#  client:
+#    serviceUrl:
+##      defaultZone: http://172.16.26.213:8030/eureka/   #启动的Eureka docker地址
+#      defaultZone: http://${EUREKA.SERVER.HOSTNAME}:${EUREKA.SERVER.PORT}/eureka/
+#  instance:
+#    prefer-ip-address: true
+#    ip-address: 172.16.26.213
